@@ -165,7 +165,7 @@
     <ClCompile Include="imgui_impl_glfw.cpp" />
     <ClCompile Include="main2.cpp" />
     <ClCompile Include="Motor.cpp" />
-    <ClCompile Include="MotorsParsingSQLiteToVector.cpp" />
+    <ClCompile Include="MotorsParsingSQLiteToVector.h" />
     <ClCompile Include="Props.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +175,7 @@
     <ClInclude Include="imgui_impl_glfw.h" />
     <ClInclude Include="imgui_internal.h" />
     <ClInclude Include="Motor.h" />
-    <ClInclude Include="PropellersSQLiteToMapParsing.cpp" />
+    <ClInclude Include="PropellersSQLiteToMapParsing.h" />
     <ClInclude Include="Props.h" />
     <ClInclude Include="stb_rect_pack.h" />
     <ClInclude Include="stb_textedit.h" />

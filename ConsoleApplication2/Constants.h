@@ -4,7 +4,7 @@
 #include <vector>
 #include "Props.h"
 #include "Motor.h"
-#include "PropellersSQLiteToMapParsing.cpp"
+#include "PropellersSQLiteToMapParsing.h"
 
 using namespace std;
 const std::string PROPELLERSTABLENAME = "PROPELLERS";
