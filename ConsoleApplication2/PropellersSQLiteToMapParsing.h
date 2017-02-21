@@ -2,7 +2,7 @@
 
 #include "Props.h"
 #include <vector>
-#include <cstdlib>
+#include <cstdlib> //
 
 ///Parsing sqlite db result into vector of CProps
 std::vector<CProps>  parseSQLiteToVectorOfProps(char ** sqliteResult, int rows, int cols)
