@@ -36,7 +36,19 @@
     <ClCompile Include="imgui_impl_glfw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PropellersSQLiteToMapParsing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MotorsParsingSQLiteToVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="MotorsParsingSQLiteToVector.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadingFromDB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlgorithmDC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,8 +83,14 @@
     <ClInclude Include="imgui_impl_glfw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AlgorithmDC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="PropellersSQLiteToMapParsing.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadingFromDB.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

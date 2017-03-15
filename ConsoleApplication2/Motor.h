@@ -23,8 +23,9 @@ public:
 	/////////////////
 	///// Constructors
 	////////////////
+	CMotorHK();
 	CMotorHK(std::string URL, float resist, float kv, float mpower, float weight, float mcurrent, float nlcurrent, float volts, float noLoadVolts, std::string name);
-	CMotorHK() {}
+	
 	//float mf_RPM;
 	/////////////////
 	///// Member variables

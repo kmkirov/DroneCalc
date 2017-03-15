@@ -95,12 +95,11 @@
       <PreprocessorDefinitions>CURL_STATICLIB;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>C:\Users\Kirakis\Documents\Visual Studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\glfw\include;C:\Users\Kirakis\Desktop\libxml2\include;C:\Users\Kirakis\Desktop\tidy-1\include;C:\Users\Kirakis\Desktop\curl-7.52.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;libiconv.lib;libiconvD.lib;libiconvStatic.lib;libiconvStaticD.lib;libxml2.lib;libxml2_a.lib;tidy.lib;tidys.lib;libcurl_a.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Kirakis\Documents\Visual Studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\glfw\lib-vc2010-32;C:\Users\Kirakis\Desktop\libxml2\lib;C:\Users\Kirakis\Desktop\tidy-1\lib;C:\Users\Kirakis\Desktop\curl-7.52.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -136,7 +135,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;libiconv.lib;libiconvD.lib;libiconvStatic.lib;libiconvStaticD.lib;libxml2.lib;libxml2_a.lib;tidy.lib;tidys.lib;libcurl_a.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Kirakis\Documents\Visual Studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\glfw\lib-vc2010-32;C:\Users\Kirakis\Desktop\libxml2\lib;C:\Users\Kirakis\Desktop\tidy-1\lib;C:\Users\Kirakis\Desktop\curl-7.52.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -159,16 +158,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AlgorithmDC.cpp" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_demo.cpp" />
     <ClCompile Include="imgui_draw.cpp" />
     <ClCompile Include="imgui_impl_glfw.cpp" />
     <ClCompile Include="main2.cpp" />
     <ClCompile Include="Motor.cpp" />
+    <ClCompile Include="MotorsParsingSQLiteToVector.cpp" />
     <ClCompile Include="MotorsParsingSQLiteToVector.h" />
+    <ClCompile Include="PropellersSQLiteToMapParsing.cpp" />
     <ClCompile Include="Props.cpp" />
+    <ClCompile Include="ReadingFromDB.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AlgorithmDC.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui.h" />
@@ -177,6 +181,7 @@
     <ClInclude Include="Motor.h" />
     <ClInclude Include="PropellersSQLiteToMapParsing.h" />
     <ClInclude Include="Props.h" />
+    <ClInclude Include="ReadingFromDB.h" />
     <ClInclude Include="stb_rect_pack.h" />
     <ClInclude Include="stb_textedit.h" />
     <ClInclude Include="stb_truetype.h" />

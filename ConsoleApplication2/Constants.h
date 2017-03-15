@@ -1,12 +1,26 @@
 #pragma once
 /// SQLite exec constants
 #include <string>
-#include <vector>
-#include "Props.h"
-#include "Motor.h"
-#include "PropellersSQLiteToMapParsing.h"
 
-using namespace std;
+const float wantedThrust = 0;
+/// wantedThrust = 4 * expectedThrustFromOneMotorInKg
+static float expectedThrustFromOneMotorInKg = 0.5;//5.9;
+
+const float WEIGHTCONSTANTMIN = 2.0;
+const float WEIGHTCONSTANTMAX = 100;//2.2;
+
+const float RPMCOEF = 1.2;
+
+const float MOTORPOWERCOEF = 2;
+const float MOTORPOWERVALUE = 1.3;
+
+const float droneWeight = 1;
+const  float wantedDroneWeihgtThrust = droneWeight * WEIGHTCONSTANTMIN;
+
+const float EFFECTIVETHRUST = 0.7;
+
+
+/// SQL Query
 const std::string PROPELLERSTABLENAME = "PROPELLERS";
 const std::string MOTORSTABLENAME = "USEDMOTORS12";
 const std::string ENDSEMICOLLUMN = ";";
@@ -15,14 +29,32 @@ const std::string ENDSEMICOLLUMN = ";";
 const std::string SQLSELECTSTAR = "Select * from ";
 
 
-std::vector<CMotorHK>  parseSQLiteToVectorOfMotors(char ** sqliteResult, int rows, int cols);
-std::vector<CMotorHK>  correctingMotorData(std::vector<CMotorHK> & motors);
+//using namespace std;
 
-std::vector<CProps>  parseSQLiteToVectorOfProps(char ** sqliteResult, int rows, int cols);
-float                getMaxThrustForPropellerInKg(const float & RPM, const float & diameter, const float & pitch);
-void                 setAdditionalParamsToVectorProps(vector<CProps>& vec, float wantedThrust);
-float                thrustCalc(const float & motorRPM, const float & propellerDiameter, const float & propellerPitch);
-float                reversingThrustEquasion(float thrust, float propellerDiameter, float propellerPitch);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//std::vector<CMotorHK>  parseSQLiteToVectorOfMotors(char ** sqliteResult, int rows, int cols);
+//std::vector<CMotorHK>  correctingMotorData(std::vector<CMotorHK> & motors);
+//
+//std::vector<CProps>  parseSQLiteToVectorOfProps(char ** sqliteResult, int rows, int cols);
+//float                getMaxThrustForPropellerInKg(const float & RPM, const float & diameter, const float & pitch);
+//void                 setAdditionalParamsToVectorProps(vector<CProps>& vec, float wantedThrust);
+//float                thrustCalc(const float & motorRPM, const float & propellerDiameter, const float & propellerPitch);
+//float                reversingThrustEquasion(float thrust, float propellerDiameter, float propellerPitch);
 
 
 ///// garbage code
