@@ -33,7 +33,7 @@ void sortAndResizeVectorProps(vector<CProps> & vec)
 void filterPropellersAccordingToThrustNeeded(float thrust, vector<CProps> & vec)
 {
 	vector<CProps> newVect;
-	std::cout << thrust / 0.102 << std::endl;
+	///std::cout << thrust / 0.102 << std::endl;
 	for (auto & elem : vec)
 	{
 		if (elem.mf_maxRPM < elem.mf_wantedThrustRPM)
@@ -100,7 +100,7 @@ vector<CMotorHK> filterMotorsByCapabilities(vector<CMotorHK> & vectorMotors, CPr
 		}
 
 		/// check if potor haz the power to lift the thing
-		if (!(elem.mf_maxPower > prop1.mf_powerNeededInWatts &&  elem.mf_maxPower < prop1.mf_powerNeededInWatts * MOTORPOWERCOEF))
+		if (!(elem.mf_maxPower > prop1.mf_powerNeededInWatts* MINMOTORPOWERCOEF &&  elem.mf_maxPower < prop1.mf_powerNeededInWatts * MOTORPOWERCOEF))
 		{
 			continue;
 		}

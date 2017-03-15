@@ -70,8 +70,8 @@ int main2()
 		for (auto elem : vectorPossibleMotors100)
 		{
 			cout << std::endl;
-			cout << " 100 efficeicu % " << elem.mf_maxEffPersentage100 << " best %" << elem.mf_bestMotorEffectiveness << " eff current " << elem.mf_bestCurrentEffectiveness << std::endl
-				<< " 70 efficeicu % "<< elem.mf_maxEffPersentage70 <<" 70% current"  << elem.mf_effectiveCurrent70 << std::endl;
+			cout << " 100 eff % " << elem.mf_maxEffPersentage100 << " best %" << elem.mf_bestMotorEffectiveness << " eff current " << elem.mf_bestCurrentEffectiveness << std::endl
+				<< " 70 eff % "<< elem.mf_maxEffPersentage70 <<" 70% current"  << elem.mf_effectiveCurrent70 << std::endl;
 		}
 
 		/// if we have motor we are not doing the same with other props
@@ -81,7 +81,12 @@ int main2()
 		}
 		bestMotor = vectorPossibleMotors100[0];
 		bestProp = prop1;
+		hasSolution = true;
 		break;
+	}
+	if (!vectorProps.size()) 
+	{
+		hasSolution = false;
 	}
 
 	closeSQLiteDb(db);
@@ -136,6 +141,17 @@ int main(int, char**)
 			ImGui::Text("Max speed in m/s: %f", calculateSpeedOfMotorInMetersPerSecond(bestMotor, bestProp));
 			ImGui::Text("Prop name %s:", bestProp.ms_name.c_str());//, bestMotor.mf_neededCurrent, 60.0 / bestMotor.mf_neededCurrent, calculateSpeedOfMotorInMetersPerSecond(bestMotor, bestProp));
 			//ImGui::Text("Motor Link: %s", bestMotor.ms_URL);
+			///ImGui::Text("Motor name %s:", bestMotor.ms_motorName.c_str());
+			
+			if(!hasSolution)
+			{
+				ImGui::Text("No solution available");
+			}
+			else 
+			{
+				ImGui::Text("Has solution  with motor %s:", bestMotor.ms_motorName.c_str());
+			}
+			
 		//	ImGui::Text("Propeller Link: %s and adress %s", bestProp.ms_name );
 			if (ImGui::Button("Go To Motor Link")) 
 			{
