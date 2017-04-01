@@ -5,18 +5,21 @@
 
 static bool hasSolution = false;
 
-static float expectedThrustFromOneMotorInKg = 0.5;//5.9;
+static float expectedThrustFromOneMotorInKg = 0.51;//5.9;
 
 
-/// propellers coeficinet for filtering power
-const float WEIGHTCONSTANTMIN = 2.0; //3.0; // 3.0
+/// propellers coef for filtering power
+///void filterPropellersAccordingToThrustNeeded(float thrust, vector<CProps> & vec)
+const float WEIGHTCONSTANTMIN = 3; //3.0; // 3.0
 const float WEIGHTCONSTANTMAX = 10; //4;//2.2;
 
-/// motor coeficient for filtering power
+/// motor coef for filtering power
+///vector<CMotorHK> filterMotorsByCapabilities(vector<CMotorHK> & vectorMotors, CProps & prop1, float  expectedThrustFromOneMotorInKg)
 const float MINMOTORPOWERCOEF = 0.8;
-const float MOTORPOWERCOEF = 2;
+const float MOTORPOWERCOEF = 2.0;
 
 /// weight * 2 * 0.7 coeficient for measuring effective thrust
+/// void calculateMotorEffectiveness(vector<CMotorHK> & vectorMotors, CProps & prop1, float effectiveCoef, float expectedThrustFromOneMotorInKg)
 const float EFFECTIVETHRUST = 0.7;
 
 

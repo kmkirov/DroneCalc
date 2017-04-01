@@ -206,7 +206,7 @@ vector<CMotorHK> getFastCalculatedMotorsCapabilities(vector<CMotorHK> & vectorMo
 //	return vectorPossibleMotors;
 //}
 
-void fast(vector<CMotorHK> & vectorMotors, CProps & prop1, float p, float expectedThrustFromOneMotorInKg);
+void calculateMotorEffectiveness(vector<CMotorHK> & vectorMotors, CProps & prop1, float p, float expectedThrustFromOneMotorInKg);
 //{
 //	for (auto & elem : vectorMotors)
 //	{

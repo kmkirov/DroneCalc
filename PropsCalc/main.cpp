@@ -74,7 +74,7 @@ CPropeller prop13(12, 6, -1, 0.629, 3.30, 65000.0 / 12.0, 2, "12 * 6  0.629 3.30
 //Slow Flyer(SF) Propellers
 //Maximum RPM = 65, 000 / prop diameter(inches)
 //
-int main() 
+int main1() 
 {
 	std::cout.width(10);
 	cout << std::setprecision(3) <<std::fixed << "Diam" << std::setw(10) << "Pitch" << std::setw(10) <<"RPM"<< std::setw(10) << "A1" << std::setw(10) << "A2" << std::setw(10) << "A3" << std::setw(10) << "A4" << std::setw(10) << "A5" << std::setw(10) << "A6" << endl;

@@ -64,7 +64,7 @@ int main2()
 		}
 
 		calcEffectivePowerForMotors(vectorPossibleMotors100);
-		fast(vectorPossibleMotors100, prop1, EFFECTIVETHRUST, expectedThrustFromOneMotorInKg);
+		calculateMotorEffectiveness(vectorPossibleMotors100, prop1, EFFECTIVETHRUST, expectedThrustFromOneMotorInKg);
 		sortMotors(vectorPossibleMotors100);
 
 		for (auto elem : vectorPossibleMotors100)

@@ -68,14 +68,13 @@ vector<CMotorHK> getFastCalculatedMotorsCapabilities(vector<CMotorHK> & vectorMo
 	return vectorPossibleMotors;
 }
 
-void fast(vector<CMotorHK> & vectorMotors, CProps & prop1, float p, float expectedThrustFromOneMotorInKg)
+void calculateMotorEffectiveness(vector<CMotorHK> & vectorMotors, CProps & prop1, float effectiveCoef, float expectedThrustFromOneMotorInKg)
 {
 	for (auto & elem : vectorMotors)
 	{
-		calcAdditionalParamsForProps(prop1, expectedThrustFromOneMotorInKg * p + elem.mf_weight);
+		calcAdditionalParamsForProps(prop1, expectedThrustFromOneMotorInKg * effectiveCoef + elem.mf_weight);
 		float voltageNeeded = prop1.mf_wantedThrustRPM / elem.mf_Kv;
 		float neededCurrent = prop1.mf_powerNeededInWatts / voltageNeeded;
-
 
 		float powerIn = elem.mf_neededVoltage * elem.mf_neededCurrent;
 		float powerOut = (neededCurrent - elem.mf_noLoadCurrent) * (voltageNeeded - neededCurrent * elem.mf_resistance);
