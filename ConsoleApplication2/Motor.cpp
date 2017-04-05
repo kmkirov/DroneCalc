@@ -17,7 +17,7 @@ CMotorHK::CMotorHK(std::string URL, float resist, float kv, float mpower, float 
 
 CMotorHK::CMotorHK() {}
 
-ostream& operator<<(ostream& os, const CMotorHK& motor)
+std::ostream& operator<<(std::ostream& os, const CMotorHK& motor)
 {
 	os  << " Resistance: "			<< motor.mf_resistance
 		<< " KV coef: "				<< motor.mf_Kv

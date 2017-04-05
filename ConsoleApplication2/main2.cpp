@@ -8,6 +8,13 @@
 #include <vector>
 #include "sqlite3.h"
 
+
+#include "Constants.h"
+#include "Motor.h"
+#include "Props.h"
+#include "ReadingFromDB.h"
+#include "MotorsParsingSQLiteToVector.h"
+
 #include "AlgorithmDC.h"
 
 
@@ -33,6 +40,10 @@ using namespace std;
 
 CProps bestProp;
 CMotorHK bestMotor;
+
+
+
+
 
 int main2()
 {
@@ -128,12 +139,12 @@ int main(int, char**)
 			static float oldValue = 0.0f;
 			ImGui::Text("Welcome to DroneCalc!");
 			ImGui::Text("Enter drone payload in kg:");
-			ImGui::InputFloat("##KG", &wantedKg, 0.1, 0.2, 3);
+			ImGui::InputFloat("##KG", &wantedKg, 0.1f, 0.2f, 3.f);
 			//ImGui::ColorEdit3("clear color", (float*)&clear_color);
 			ImGui::Text("Enter drone payload in kg %f:", wantedKg);
 			if (wantedKg && abs(wantedKg - oldValue) > 0.05 )
 			{
-				expectedThrustFromOneMotorInKg = wantedKg / 4.0;
+				expectedThrustFromOneMotorInKg = wantedKg / 4.0f;
 				oldValue = wantedKg;
 				main2();
 			}
@@ -184,6 +195,6 @@ int main(int, char**)
 	return 0;
 }
 
-//// http://klsin.bpmsg.com/how-fast-can-a-quadcopter-fly/
-//// http://aviation.stackexchange.com/questions/8819/is-there-any-equation-to-bind-velocity-thrust-and-power/8822#8822
-/// http://www.electricrcaircraftguy.com/2014/04/propeller-static-dynamic-thrust-equation-background.html
+// http://klsin.bpmsg.com/how-fast-can-a-quadcopter-fly/
+// http://aviation.stackexchange.com/questions/8819/is-there-any-equation-to-bind-velocity-thrust-and-power/8822#8822
+// http://www.electricrcaircraftguy.com/2014/04/propeller-static-dynamic-thrust-equation-background.html

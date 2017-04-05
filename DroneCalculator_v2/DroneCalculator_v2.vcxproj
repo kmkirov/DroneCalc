@@ -19,11 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C51AD706-0155-48B0-9EAC-58E7409A4BBC}</ProjectGuid>
+    <ProjectGuid>{44534950-CDCC-4B42-A231-D4B0D8E65665}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication2</RootNamespace>
+    <RootNamespace>DroneCalculator_v2</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>DroneCalc</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -72,16 +71,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files\PostgreSQL\pg96\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\PostgreSQL\pg96\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Program Files\PostgreSQL\pg96\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\PostgreSQL\pg96\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -92,16 +87,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>CURL_STATICLIB;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Kirakis\Documents\Visual Studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\glfw\include;C:\Users\Kirakis\Desktop\libxml2\include;C:\Users\Kirakis\Desktop\tidy-1\include;C:\Users\Kirakis\Desktop\curl-7.52.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Kirakis\Documents\Visual Studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\glfw\lib-vc2010-32;C:\Users\Kirakis\Desktop\libxml2\lib;C:\Users\Kirakis\Desktop\tidy-1\lib;C:\Users\Kirakis\Desktop\curl-7.52.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -126,19 +118,14 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>CURL_STATICLIB;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Kirakis\Documents\Visual Studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\glfw\include;C:\Users\Kirakis\Desktop\libxml2\include;C:\Users\Kirakis\Desktop\tidy-1\include;C:\Users\Kirakis\Desktop\curl-7.52.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Kirakis\Documents\Visual Studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\glfw\lib-vc2010-32;C:\Users\Kirakis\Desktop\libxml2\lib;C:\Users\Kirakis\Desktop\tidy-1\lib;C:\Users\Kirakis\Desktop\curl-7.52.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -160,45 +147,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AlgorithmDC.cpp" />
-    <ClCompile Include="imgui.cpp" />
-    <ClCompile Include="imgui_demo.cpp" />
-    <ClCompile Include="imgui_draw.cpp" />
-    <ClCompile Include="imgui_impl_glfw.cpp" />
-    <ClCompile Include="main2.cpp" />
-    <ClCompile Include="Motor.cpp" />
-    <ClCompile Include="MotorsParsingSQLiteToVector.cpp" />
-    <ClCompile Include="MotorsParsingSQLiteToVector.h" />
-    <ClCompile Include="PropellersSQLiteToMapParsing.cpp" />
-    <ClCompile Include="Props.cpp" />
-    <ClCompile Include="ReadingFromDB.cpp" />
+    <ClInclude Include="algorithm.h" />
+    <ClInclude Include="CMotorDetails.h" />
+    <ClInclude Include="CMotorDetailsDecorator.h" />
+    <ClInclude Include="Const.h" />
+    <ClInclude Include="CPart.h" />
+    <ClInclude Include="CSQLiteBasicDetailsReader.h" />
+    <ClInclude Include="IBasicDetailsReader.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AlgorithmDC.h" />
-    <ClInclude Include="Constants.h" />
-    <ClInclude Include="imconfig.h" />
-    <ClInclude Include="imgui.h" />
-    <ClInclude Include="imgui_impl_glfw.h" />
-    <ClInclude Include="imgui_internal.h" />
-    <ClInclude Include="Motor.h" />
-    <ClInclude Include="PropellersSQLiteToMapParsing.h" />
-    <ClInclude Include="Props.h" />
-    <ClInclude Include="ReadingFromDB.h" />
-    <ClInclude Include="stb_rect_pack.h" />
-    <ClInclude Include="stb_textedit.h" />
-    <ClInclude Include="stb_truetype.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ClCompile Include="CMotorDetails.cpp" />
+    <ClCompile Include="CSQLiteBasicDetailsReader.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\cpprestsdk.v140.windesktop.msvcstl.dyn.rt-dyn.2.9.1\build\native\cpprestsdk.v140.windesktop.msvcstl.dyn.rt-dyn.targets" Condition="Exists('..\packages\cpprestsdk.v140.windesktop.msvcstl.dyn.rt-dyn.2.9.1\build\native\cpprestsdk.v140.windesktop.msvcstl.dyn.rt-dyn.targets')" />
   </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\cpprestsdk.v140.windesktop.msvcstl.dyn.rt-dyn.2.9.1\build\native\cpprestsdk.v140.windesktop.msvcstl.dyn.rt-dyn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cpprestsdk.v140.windesktop.msvcstl.dyn.rt-dyn.2.9.1\build\native\cpprestsdk.v140.windesktop.msvcstl.dyn.rt-dyn.targets'))" />
-  </Target>
 </Project>

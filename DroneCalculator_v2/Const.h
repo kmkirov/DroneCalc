@@ -7,13 +7,13 @@ static bool hasSolution = false;
 static float expectedThrustFromOneMotorInKg = 0.51f;//5.9;
 
 
-/// propellers coef for filtering power
-///void filterPropellersAccordingToThrustNeeded(float thrust, vector<CProps> & vec)
+													/// propellers coef for filtering power
+													///void filterPropellersAccordingToThrustNeeded(float thrust, vector<CProps> & vec)
 const float WEIGHTCONSTANTMIN = 3.f; //3.0; // 3.0
 const float WEIGHTCONSTANTMAX = 10.f; //4;//2.2;
 
-/// motor coef for filtering power
-///vector<CMotorHK> filterMotorsByCapabilities(vector<CMotorHK> & vectorMotors, CProps & prop1, float  expectedThrustFromOneMotorInKg)
+									  /// motor coef for filtering power
+									  ///vector<CMotorHK> filterMotorsByCapabilities(vector<CMotorHK> & vectorMotors, CProps & prop1, float  expectedThrustFromOneMotorInKg)
 const float MINMOTORPOWERCOEF = 0.8f;
 const float MOTORPOWERCOEF = 2.0f;
 
@@ -35,6 +35,7 @@ const float EFFECTIVETHRUST = 0.7f;
 /// SQL Query Table Nnames
 const std::string PROPELLERSTABLENAME = "PROPELLERS";
 const std::string MOTORSTABLENAME = "USEDMOTORS12";
+const std::string DBNAME = "test.db";
 
 
 /// sql exec statements

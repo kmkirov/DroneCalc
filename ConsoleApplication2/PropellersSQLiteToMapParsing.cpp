@@ -1,6 +1,6 @@
 #include "PropellersSQLiteToMapParsing.h"
-
-
+#include "Props.h"
+#include <cstdlib>
 ///Parsing sqlite db result into vector of CProps
 std::vector<CProps>  parseSQLiteToVectorOfProps(char ** sqliteResult, int rows, int cols)
 {
@@ -75,7 +75,7 @@ void calcAdditionalParamsForProps(CProps & prop, float wantedThrust)
 }
 
 
-void setAdditionalParamsToVectorProps(vector<CProps>& vec, float wantedThrust)
+void setAdditionalParamsToVectorProps(std::vector<CProps>& vec, float wantedThrust)
 {
 	for (CProps & prop : vec)
 	{

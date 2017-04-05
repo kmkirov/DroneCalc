@@ -2,12 +2,10 @@
 /////////////////////////////////////
 ///// Includes
 //////////////////////
-//#ifndef MOTOR_H
-//#define MOTOR_H
-///
+
 #include <string>
 #include <iostream>
-using namespace std;
+
 ////////////////////////////
 //// Constants
 ///////////////////////////
@@ -70,4 +68,3 @@ public:
 /// return - output stream in order to get "bind" streams
 ////
 std::ostream& operator<<(std::ostream& os, const CMotorHK& motor);
-//#endif 

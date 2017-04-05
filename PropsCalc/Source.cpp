@@ -57,7 +57,7 @@ public:
 	virtual CMRPropeller getPopellerDetails() = 0;
 };
 
-class CDBInfoReaderImpl : public CInfoReader 
+class CDBInfoReaderImpl : public CInfoReaderImpl
 {
 	CMRMotor     getMotorDetails();
 	CMRPropeller getPopellerDetails();

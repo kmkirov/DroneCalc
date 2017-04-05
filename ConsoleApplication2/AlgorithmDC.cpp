@@ -1,7 +1,21 @@
 #include "AlgorithmDC.h"
 
+#include <Windows.h>
+#include <vector>
+#include <cstdlib>
+#include <algorithm> 
+
+#include "Motor.h"
+#include "Props.h"
+#include "MotorsParsingSQLiteToVector.h"
+#include "PropellersSQLiteToMapParsing.h"
 
 
+#include "Constants.h"
+#include "ReadingFromDB.h"
+
+
+using namespace std;
 
 bool propComparator(CProps a, CProps b)
 {
@@ -134,17 +148,17 @@ float returnEffectivenessOfMotor(CMotorHK & motor)
 	return powerOut / powerIn;
 }
 
-void calcEffectivePowerForMotors(vector<CMotorHK> & motors)
+void calcEffectivePowerForMotors(std::vector<CMotorHK> & motors)
 {
 	for (auto& elem : motors)
 	{
 		elem.mf_bestCurrentEffectiveness = sqrt(elem.mf_maxCurrent*elem.mf_noLoadCurrent);
-		elem.mf_bestMotorEffectiveness = pow(((elem.mf_bestCurrentEffectiveness - elem.mf_noLoadCurrent) / elem.mf_bestCurrentEffectiveness), 2.0);
+		elem.mf_bestMotorEffectiveness = pow(((elem.mf_bestCurrentEffectiveness - elem.mf_noLoadCurrent) / elem.mf_bestCurrentEffectiveness), 2.0f);
 
 		elem.mf_maxEffPersentage100 = returnEffectivenessOfMotor(elem);
 
 
-		cout << " eff current " << elem.mf_bestCurrentEffectiveness << "maxEffectivePersentage " << elem.mf_bestMotorEffectiveness << " effPower " << elem.mf_maxEffPersentage100;
+		std::cout << " eff current " << elem.mf_bestCurrentEffectiveness << "maxEffectivePersentage " << elem.mf_bestMotorEffectiveness << " effPower " << elem.mf_maxEffPersentage100;
 	}
 
 }
@@ -165,7 +179,7 @@ void getPropsAppropriateforThrustSorted(vector<CProps>& vectorProps, float expec
 
 }
 
-vector<CProps> getPropsVectorFromSQLiteParsingDB(sqlite3 * db)
+std::vector<CProps> getPropsVectorFromSQLiteParsingDB(sqlite3 * db)
 {
 	std::string sqlExPropellers = SQLSELECTSTAR + PROPELLERSTABLENAME + ENDSEMICOLLUMN;
 	/// results from db
@@ -179,7 +193,7 @@ vector<CProps> getPropsVectorFromSQLiteParsingDB(sqlite3 * db)
 }
 
 
-vector<CMotorHK> getMotorVectorFromSQLiteParsingDB(sqlite3 * db)
+std::vector<CMotorHK> getMotorVectorFromSQLiteParsingDB(sqlite3 * db)
 {
 	std::string sqlExMotor = SQLSELECTSTAR + MOTORSTABLENAME + ENDSEMICOLLUMN;
 	/// results from db
@@ -207,5 +221,5 @@ void goToPageWithDefaultBrowser(std::string url)
 
 float calculateSpeedOfMotorInMetersPerSecond(const CMotorHK & motor, const CProps & prop)
 {/// http://www.mh-aerotools.de/airfoils/pylonprops_1.htm
-	return 3.14159265359 * (motor.mf_Kv * motor.mf_neededVoltage / 60.0) * prop.mf_diameter * 0.0254;
+	return 3.14159265359f * (motor.mf_Kv * motor.mf_neededVoltage / 60.0f) * prop.mf_diameter * 0.0254f;
 }

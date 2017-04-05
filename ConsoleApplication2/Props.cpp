@@ -18,7 +18,7 @@ CProps::CProps(float diam, float pitch, std::string name)
 ///////////////////////////////
 ///////////// Functions
 //////////////////////////////
-ostream& operator<<(ostream& os, const CProps& prop)
+std::ostream& operator<<(std::ostream& os, const CProps& prop)
 {
 	os  << prop.ms_name 
 		<< " Diameter: "			<< prop.mf_diameter 

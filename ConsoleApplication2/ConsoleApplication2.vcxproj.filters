@@ -13,17 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\DroneCalc_v1_headers">
+      <UniqueIdentifier>{e538d506-d722-4971-82ad-299bad9ac46b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DroneCalc_v1_source">
+      <UniqueIdentifier>{51003fd9-3d40-4454-8f21-f59641587ec0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Props.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Motor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -36,32 +33,32 @@
     <ClCompile Include="imgui_impl_glfw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PropellersSQLiteToMapParsing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MotorsParsingSQLiteToVector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MotorsParsingSQLiteToVector.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ReadingFromDB.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\DroneCalc_v1_headers</Filter>
     </ClCompile>
     <ClCompile Include="AlgorithmDC.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DroneCalc_v1_source</Filter>
+    </ClCompile>
+    <ClCompile Include="main2.cpp">
+      <Filter>Source Files\DroneCalc_v1_source</Filter>
+    </ClCompile>
+    <ClCompile Include="Motor.cpp">
+      <Filter>Source Files\DroneCalc_v1_source</Filter>
+    </ClCompile>
+    <ClCompile Include="MotorsParsingSQLiteToVector.cpp">
+      <Filter>Source Files\DroneCalc_v1_source</Filter>
+    </ClCompile>
+    <ClCompile Include="PropellersSQLiteToMapParsing.cpp">
+      <Filter>Source Files\DroneCalc_v1_source</Filter>
+    </ClCompile>
+    <ClCompile Include="Props.cpp">
+      <Filter>Source Files\DroneCalc_v1_source</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadingFromDB.cpp">
+      <Filter>Source Files\DroneCalc_v1_source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Props.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Motor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="imconfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -84,13 +81,22 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AlgorithmDC.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DroneCalc_v1_headers</Filter>
     </ClInclude>
-    <ClInclude Include="PropellersSQLiteToMapParsing.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files\DroneCalc_v1_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Props.h">
+      <Filter>Header Files\DroneCalc_v1_headers</Filter>
     </ClInclude>
     <ClInclude Include="ReadingFromDB.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DroneCalc_v1_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PropellersSQLiteToMapParsing.h">
+      <Filter>Header Files\DroneCalc_v1_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Motor.h">
+      <Filter>Header Files\DroneCalc_v1_headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
